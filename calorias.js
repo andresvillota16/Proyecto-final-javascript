@@ -1,4 +1,4 @@
-const compose = (...functions) => data =>
+ const compose = (...functions) => data =>
     functions.reduceRight((value, func) => func(value), data)
 
 
@@ -187,21 +187,23 @@ const renderItems = () => {
     $TBODY.innerHTML = rows;
 }
 
-const validateInputs = () => {
-    if ($DESCRIPTION.value && $CALORIES.value && $CARBS.value && $PROTEIN.value) {
+const validateInputs = () =>
+{
+    if ($DESCRIPTION.value && $CALORIES.value && $CARBS.value && $PROTEIN.value)
+    {
         add(itemsList);
         clearInputs();
         updateTotal();
         renderItems();
     }
-    else {
+    else
+    {
         $DESCRIPTION.classList.add(IS_INVALID);
         $CALORIES.classList.add(IS_INVALID);
         $CARBS.classList.add(IS_INVALID);
         $PROTEIN.classList.add(IS_INVALID);
     }
 }
-
 
 $ADD_BUTTON.addEventListener('click', validateInputs);
 
@@ -243,3 +245,52 @@ botonToast.addEventListener('click', () => {
     }).showToast();
 
 })
+
+/* 
+fetch(`${API_URL}/users`)
+.then((response) => response.json())
+.then((users) => {
+    const tpl = users.map((user) => `<li> ${user.name} ${user.email}</li> `);
+    HTMLResponse.innerHTML = `<ul>${tpl}</ul>`;
+}); */
+
+
+
+/* const API_URL = ("https://jsonplaceholder.typicode.com");
+const HTMLResponse = document.querySelector("#app");
+fetch(`${API_URL}/users`)
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      Toastify({
+        text: `Hubo un problema en el servidor, intente mas tarde.`,
+        duration: 5000,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+      }).showToast();
+    }
+  })
+  .then((posteo) => {
+    console.log(posteo);
+  })
+  .catch((error) => {
+    Toastify({
+      text: `Hubo un problema en el servidor, intente mas tarde. Error ${error}`,
+      duration: 5000,
+      close: true,
+      gravity: "bottom",
+      position: "right",
+    }).showToast();
+  });   */
+
+  fetch('./productos.json')
+  .then((response) => {
+    if (response.ok){
+        return response.json();
+    }
+  })
+  .then((productos) => {
+    console.log(productos);
+  })

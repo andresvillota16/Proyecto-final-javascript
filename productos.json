@@ -1,0 +1,14 @@
+[
+    {
+        "descripcion": "manzana",
+        "calorias": 2,
+        "carbohidratos": 2,
+        "proteinas": 2
+    },
+    {
+        "descripcion": "cafe",
+        "calorias": 1,
+        "carbohidratos": 3,
+        "proteinas": 4
+    }
+]
