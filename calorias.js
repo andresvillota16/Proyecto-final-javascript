@@ -31,7 +31,6 @@ const tag = nameTag =>
 const inputTag = nameTag =>
     typeof nameTag === 'string' ? inputAttrs({ tag: nameTag }) : inputAttrs(nameTag);
 
-// const tableRow = (items) => tableRowTag(tableCells(items))
 
 const tableCell = tag('td');
 const tableCells = items => items.map(tableCell).join('');
@@ -245,45 +244,6 @@ botonToast.addEventListener('click', () => {
     }).showToast();
 
 })
-
-/* 
-fetch(`${API_URL}/users`)
-.then((response) => response.json())
-.then((users) => {
-    const tpl = users.map((user) => `<li> ${user.name} ${user.email}</li> `);
-    HTMLResponse.innerHTML = `<ul>${tpl}</ul>`;
-}); */
-
-
-
-/* const API_URL = ("https://jsonplaceholder.typicode.com");
-const HTMLResponse = document.querySelector("#app");
-fetch(`${API_URL}/users`)
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      Toastify({
-        text: `Hubo un problema en el servidor, intente mas tarde.`,
-        duration: 5000,
-        close: true,
-        gravity: "bottom",
-        position: "right",
-      }).showToast();
-    }
-  })
-  .then((posteo) => {
-    console.log(posteo);
-  })
-  .catch((error) => {
-    Toastify({
-      text: `Hubo un problema en el servidor, intente mas tarde. Error ${error}`,
-      duration: 5000,
-      close: true,
-      gravity: "bottom",
-      position: "right",
-    }).showToast();
-  });   */
 
   fetch('./productos.json')
   .then((response) => {
